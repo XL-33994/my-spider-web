@@ -1,10 +1,10 @@
- /* ── TOKENS ────────────────────────────────────────────── */
+ /*tokens*/
     :root {
       --color-bg:        #ffffff;
-      --color-nav-bg:    #1a237e;   /* deep indigo, like the Google Sites dark nav */
+      --color-nav-bg:    #1a237e;   
       --color-nav-text:  #ffffff;
       --color-nav-hover: rgba(255,255,255,0.18);
-      --color-hero-bg:   #e8eaf6;   /* very light indigo tint */
+      --color-hero-bg:   #e8eaf6;   
       --color-accent:    #3949ab;
       --color-text:      #212121;
       --color-muted:     #616161;
@@ -20,19 +20,18 @@
       --shadow: 0 2px 8px rgba(0,0,0,0.10);
     }
 
-    /* ── RESET ─────────────────────────────────────────────── */
+    
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: var(--font-body);
       background: var(--color-bg);
       color: var(--color-text);
       line-height: 1.6;
- 
     }
     a { color: inherit; text-decoration: none; }
     img { display: block; max-width: 100%; }
 
-    /* ── NAV ────────────────────────────────────────────────── */
+    
     nav {
       background: var(--color-nav-bg);
       position: sticky;
@@ -40,6 +39,40 @@
       z-index: 100;
       box-shadow: 0 2px 6px rgba(0,0,0,0.25);
     }
+    .dropdown {
+    position: relative;
+}
+
+.dropdown a {
+    text-decoration: none;
+    color: white;
+}
+
+.arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    list-style: none;
+    background: #1a237e;
+    padding: 10px;
+    min-width: 94px;
+    border-bottom-left-radius:15px ;
+    border-bottom-right-radius: 15px;
+}
+
+.dropdown:hover .submenu {
+    display: block;
+}
+
+.dropdown:hover .arrow {
+    transform: rotate(90deg);
+}
     .nav-inner {
       max-width: 1100px;
       margin: 0 0;
@@ -76,7 +109,7 @@
       background: var(--color-nav-hover);
     }
 
-    /* ── HERO ───────────────────────────────────────────────── */
+    /* ---- HERO ----------------*/
     .hero {
       background: var(--color-hero-bg);
       padding: 0px 0px;
@@ -139,7 +172,7 @@
       font-size: 3rem;
     }
 
-    /* ── SECTIONS ───────────────────────────────────────────── */
+    /* -------- SECTIONS----------------------------*/
     section {
       padding: 56px 24px;
     }
@@ -155,7 +188,7 @@
       margin-bottom: 32px;
     }
 
-    /* ── PROJECTS GRID ──────────────────────────────────────── */
+    /* ─--- PROJECTS GRID -----------------------------------*/
     .projects { background: var(--color-bg); }
     .projects-grid {
       display: grid;
@@ -210,7 +243,7 @@
       margin-top: 6px;
     }
 
-    /* ── CONTACT ────────────────────────────────────────────── */
+    /* -------------- CONTACT ---------------------------- */
     .contact {
       background: var(--color-footer-bg);
       border-top: 1px solid var(--color-footer-border);
@@ -225,7 +258,7 @@
     }
     .contact a:hover { opacity: 0.8; }
 
-    /* ── FOOTER ─────────────────────────────────────────────── */
+    /*------ FOOTER ------------- */
     footer {
       background: var(--color-nav-bg);
       color: rgba(255,255,255,0.55);
@@ -234,7 +267,7 @@
       padding: 20px 24px;
     }
 
-    /* ── RESPONSIVE ─────────────────────────────────────────── */
+    /*-------RESPONSIVE -------------------─────────────────────────────── */
     @media (max-width: 900px) {
       .hero-inner { flex-direction: column; gap: 32px; }
       .hero-image { width: 100%; height: 226px; }
