@@ -12,6 +12,42 @@
         document.querySelector("meta[name=viewport]").setAttribute("content", "width=1280, initial-scale=1.0");
     }
 </script>
+<style>
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 9999;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    width: 90%;
+    max-width: 470px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    background: white;
+}
+
+.modal-content video {
+    width: auto;
+    height: auto;
+    display: block;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 35px;
+    color: white;
+    cursor: pointer;
+}
+</style><!---->
 </head>
 <body>
 <!--------------------------------------------------------------------------------------------->
@@ -70,12 +106,12 @@
           <div class="card-body">
             <div class="card-label">Presentation</div>
             <div class="card-title">gesture control glove</div>
-            <div class="card-desc">A glove for industrial robots control..</div>
+            <div class="card-desc">A glove for industrial robots control.<br><span style="visibility: hidden;">.</span></div>
           </div>
         </div>
       </a>
-        <!-- Card 3-->
-        <a href="video.html">
+        <!-- Card 3 -------------->
+      <a href="#" onclick="openVideo()">
         <div class="card">
           <img src="Screensììììhot from 2026-06-13 17-53-00.png" height="270px" width="350px" alt="">
           <div class="card-body">
@@ -84,7 +120,24 @@
             <div class="card-desc">the video shows a simulation in Unity engine for the gesture glove</div>
           </div>
         </div>
-      </a>
+      </a> 
+      <div class="modal" id="videoModal">
+    <span class="close" onclick="closeVideo()">&times;</span>
+
+    <div class="modal-content">
+        <video controls muted>
+            <source src="WhatsApp Video 2026-06-13 at 4.05.03 PM.mp4" type="video/mp4">
+        </video>
+    </div>
+    <script>
+function openVideo() {
+    document.getElementById("videoModal").style.display = "flex";
+}
+
+function closeVideo() {
+    document.getElementById("videoModal").style.display = "none";
+}
+</script>
 
       </div>
     </div>
@@ -92,11 +145,9 @@
 <!--------------------------------------------------------------------------------------------->
   <section class="contact">
     <div class="section-inner">
-      <h2>If u thought contacting me</h2>
-      <img src="email.png" width="40" height="40" style="display: inline-block;margin: 0 15px;">
+      <h2>Contact</h2>
+      <img src="email.png" width="40" height="30" style="display: inline-block;margin: 0 15px;">
       <a href="mailto:jarmouni.aymene@gmail.com">jarmouni.aymene@gmail.com</a><br>
-      <img src="instag.png" width="40" height="40" style="display: inline-block;margin: 0 15px;">
-      <a href="https://www.instagram.com/it.s_eyman/?utm_source=ig_web_button_share_sheet">it.s_eyman</a>
     </div>
   </section>
 <!--------------------------------------------------------------------------------------------->
